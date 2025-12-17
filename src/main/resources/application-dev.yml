@@ -1,5 +1,20 @@
 spring:
+  jmx:
+    enabled: false
   datasource:
     url: jdbc:mysql://localhost:3306/typhon
     username: root
     password: mysql.
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: redis.
+      database: 0
+      timeout: 10000ms
+      jedis:
+        pool:
+          max-active: 1024
+          max-wait: 10000ms
+          max-idle: 200
+          min-idle: 5
