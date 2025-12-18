@@ -18,7 +18,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         QueryWrapper queryWrapper = QueryWrapper.create()
                 .select()
                 .where(
-                        USER.ACCOUNT.eq(account)
+                        USER.ACCOUNT.eq(account).or(USER.EMAIL.eq(account))
                 );
         User user = mapper.selectOneWithRelationsByQuery(queryWrapper);
         //TODO:

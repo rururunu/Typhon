@@ -71,7 +71,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // 授权规则
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/login").permitAll()
+                        .requestMatchers("/login", "/sign/**").permitAll()
                         .anyRequest().authenticated())
                 // 注销
                 .logout(logout -> logout
